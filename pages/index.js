@@ -1,18 +1,27 @@
 import Link from "next/link";
-import Layout from "../components/Layout"
 
-const index = () => { 
-  
-    return (
 
-    <Layout>
-    <h1>Home</h1>
-    <Link href="/about">
-    <a >Go to about</a>
-    </Link>
-    <p>Welocme to the Home Page</p>
-    </Layout>
+export default ({ children, title }) => (
+  <div>
+ <header> 
+      <Link href="/">
+        <a>Home</a>
+      </Link>
+
+      <Link href="/about">
+        <a>About</a>
+      </Link>
+
+      <Link href="/hireme">
+        <a>Hire Me</a>
+      </Link>
+    
+    </header>
+
+    <h1>{title}</h1>
+      {children}
+
+    <footer>&copy; {new Date().getFullYear()}</footer>
    
-)
-}
-export default index; 
+  </div>
+);

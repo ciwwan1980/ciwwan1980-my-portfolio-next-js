@@ -1,11 +1,16 @@
-export default(props)=>{ 
-    console.log(props.children)
-    return(   
+import Link from "next/link"; 
 
+export default({children,title}) => ( 
+  
     <div>
-    <header>header</header>
-    {props.children}
+    <header>
+    <Link href="/"><a>Home</a></Link>
+    <Link href="/about"><a>About</a></Link>
+    <Link href="/hireme"><a>hireme</a></Link>
+    </header>
+    <h1>{title}</h1>
+        {children}
     <footer>footer</footer>
     </div>
+
 )
-}

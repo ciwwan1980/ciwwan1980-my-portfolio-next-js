@@ -1,11 +1,11 @@
-const hireMe=()=>( 
-        <div>
-         <h1>hire me</h1>
+import Layout from "../components/Layout"
+
+export default()=>( 
+    
+        <Layout title="HireMe">
         <p>
         you can hire me at {" "} 
         <a href="ajilqado@gmail.com">ajilqado@gmail.com</a>
         </p>
-        </div>
+       </Layout>
 )
-
-export default hireMe
