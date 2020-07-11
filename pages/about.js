@@ -34,7 +34,7 @@ export default class about extends Component {
     //     })
     // }
     render() {
-    const { user} = this.props;
+    const {user} = this.props;
         return (
             <div>
       
