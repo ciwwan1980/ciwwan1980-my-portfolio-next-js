@@ -1,40 +1,27 @@
 import Link from "next/link"
 import Layout from "../components/Layout"
+import Error from "./_error";
 import fetch from "isomorphic-unfetch";
 import React, { Component } from 'react'
 
 export default class about extends Component {
 
  static async getInitialProps() {
-    const res = await fetch("https://api.github.com/users/ciwwan1980");
+    const res = await fetch("https://api.github.com/users/ciwwan19");
+
+    const statusCode = res.status > 200 ? res.status : false;
     const data = await res.json();
 
-    return { user: data };
+    return { user: data, statusCode };
   }
-// static getInitialProps() {
-// fetch("https://api.github.com/users/ciwwan1980")
-//   .then(res=>res.json())
-//   .then(data=>{
-//       console.log(data)
-//   })
 
-//     return { };
-//   }
-// state={
-//     user:null
-// }
-
-    // componentDidMount(){
-    //     fetch("https://api.github.com/users/ciwwan1980")
-    //     .then(res=>res.json())
-    //     .then(data=>{
-    //         this.setState({
-    //             user:data
-    //         })
-    //     })
-    // }
     render() {
-    const {user} = this.props;
+
+     const { user, statusCode } = this.props;
+
+        if (statusCode) {
+      return <Error statusCode={statusCode} />;
+    }
         return (
             <div>
       
