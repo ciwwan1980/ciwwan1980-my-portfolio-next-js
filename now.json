@@ -1,3 +1,7 @@
 {
-  "type": "static"
+"vesrion":2,
+"name":"next-portfolio", 
+"build":[
+  {"src":"package.json", "use":"@now/static-build"}
+]
 }
